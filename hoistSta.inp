@@ -1,0 +1,35 @@
+*HEADING
+Two-dimensional overhead hoist frame
+**SI units-Length = m, Mass=kg, Time=s, Force=N
+**Stress=Pa(N/m2),Energy=J,Density=(kg/m3)
+***
+***
+*INCLUDE,INPUT=Nall.inp
+*INCLUDE,INPUT=Eall.inp
+*INCLUDE,INPUT=Nbou.inp
+*INCLUDE,INPUT=Nload.inp
+***
+*MATERIAL,NAME=STEEL
+*ELASTIC
+200.0E9,0.3
+***
+*BEAM SECTION,MATERIAL=STEEL,ELSET=EallFrame,SECTION=RECT
+2.0E-03,2.0E-03
+0.0,0.0,-1.0
+***
+*BOUNDARY
+Nbou1,1,6
+Nbou2,2
+***
+*STEP
+*STATIC
+***
+*CLOAD
+NloadY,2,-10.0E03
+***OUTPUTS
+*NODE PRINT,NSET=NallFrame
+U,
+RF
+*EL FILE
+S
+*END STEP

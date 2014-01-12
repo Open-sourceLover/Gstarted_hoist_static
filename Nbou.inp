@@ -1,0 +1,10 @@
+***
+**Node set-ENCASTRED end
+*NSET,NSET=Nbou1
+101
+***
+**Node set-restricted translational
+**degrees of freedom in global Y-direction
+*NSET,NSET=Nbou2
+103
+***
